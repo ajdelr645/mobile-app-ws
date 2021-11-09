@@ -8,7 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import com.appsdeveloperblog.app.ws.security.AppProperties;
 
 /**
- * This is for the develop branch
+ * This is for the master and develop branch
  */
 @SpringBootApplication
 public class MobileAppWsApplication {
