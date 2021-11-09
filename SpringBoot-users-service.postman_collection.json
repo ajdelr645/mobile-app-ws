@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "3d6d4ee3-9837-463d-8591-1ca64f8814ae",
+		"name": "SpringBoot-users-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user password reset request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"xmusjacksonf337@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/password-reset-request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"password-reset-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user password reset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"token\" : \"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJOY2lEN3I4MERWaGNXRlVKaDNOR3phQjFsb2pweUQiLCJleHAiOjE2MzYxMTkwMjR9.RxxJAajyT8bLJuBi_vflFvMWetYbnpJlbc7kgtpe0a4uW_s69ifdMxVuUNHO9ODP1U0yhNWpFhe1c_8V_0DqlA\",\r\n    \"password\" : \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/password-reset",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"password-reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user create with addresses",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"EmailVerf\",\r\n    \"lastName\" : \"Tester\",\r\n    \"email\" : \"user2@gmail.com\",\r\n    \"password\" : \"123\",\r\n    \"addresses\" : [\r\n        {\r\n            \"city\" : \"Paranaque\",\r\n            \"country\" : \"Philippines\",\r\n            \"streetName\" : \"501 street\",\r\n            \"postalCode\" : \"1711\",\r\n            \"type\" : \"billing\"\r\n        },\r\n        {\r\n            \"city\" : \"Paranaque\",\r\n            \"country\" : \"Philippines\",\r\n            \"streetName\" : \"501 street\",\r\n            \"postalCode\" : \"ABCCBA\",\r\n            \"type\" : \"shipping\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin@test.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImV4cCI6MTYzNzIzNjcyOH0.U1VUvptKoC2_ys2lVrVcHywU5IYuB8gfthkWqndd98Nu-9U0JxWoUPyMjxuaLZBlpsiRHgeXujMvRSoEhSTWmA",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/mfGEm0c6Nn2BWjdquQVveulEWZvbMt",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"mfGEm0c6Nn2BWjdquQVveulEWZvbMt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "email verification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/email-verification?token=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwa0FobUg3R1NvdkRsVFJ0ZUNZd01LakdSc3lPQTYiLCJleHAiOjE2MzcyMzY2NzN9.-aXoZKNug0LUeYwPeICjEr_G20HfG96sEAxCCoUpT7EKlZHPt1qbg9ibuM4y-AGS1uobm7w6jR2g79uih_Gxtw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"email-verification"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwa0FobUg3R1NvdkRsVFJ0ZUNZd01LakdSc3lPQTYiLCJleHAiOjE2MzcyMzY2NzN9.-aXoZKNug0LUeYwPeICjEr_G20HfG96sEAxCCoUpT7EKlZHPt1qbg9ibuM4y-AGS1uobm7w6jR2g79uih_Gxtw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users with addresses",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0M0B0ZXN0LmNvbSIsImV4cCI6MTYzNTkzMDM4OX0.wnUQZ4Y6-cvNjEiJvJk0oSt1Mo-UDPI0bKcKIbxRjm1jlTJ0vl-dtScVGnxZH1rNo_aD6F0v_pNCNxLSt5wDNQ",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/CUvAIK8CCeBkkme4yFIzzchV9WzR6l/addresses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"CUvAIK8CCeBkkme4yFIzzchV9WzR6l",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user address",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0M0B0ZXN0LmNvbSIsImV4cCI6MTYzNTkzMDM4OX0.wnUQZ4Y6-cvNjEiJvJk0oSt1Mo-UDPI0bKcKIbxRjm1jlTJ0vl-dtScVGnxZH1rNo_aD6F0v_pNCNxLSt5wDNQ",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/nQbIwFTnQJSOAdY6GvWPtR85bVYRl5/addresses/XRsLJhIPhcFUvt0AZdbKYis4zWsECx",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"nQbIwFTnQJSOAdY6GvWPtR85bVYRl5",
+						"addresses",
+						"XRsLJhIPhcFUvt0AZdbKYis4zWsECx"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0M0B0ZXN0LmNvbSIsImV4cCI6MTYzNTk0MDczNn0.3RwwsSQN1To3IlbUytH3aegQggXYzD5NROLefatuCNkQvslHKR0Jta6LXsJ3qzKPvZ9-nO4bNbxcJCbml-auGw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Alain2\",\r\n    \"lastName\" : \"DelRosario2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/Ei5xluXA3WFUYla5yeTI9Rze1jTLj6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"Ei5xluXA3WFUYla5yeTI9Rze1jTLj6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user delete",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImV4cCI6MTYzNjMzMDM0Nn0.Ut96HLPBxDACa0KuW4G4Hj71aRmHAEBQ_RDCrGhxRJUTs8Xi8V_mnDvPrMHtttrEQDJNxzqkZ2qd0FjwecZJrw",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users/ol8WGWg80PVvwE6CK7lmEDLY2uq1Oz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users",
+						"ol8WGWg80PVvwE6CK7lmEDLY2uq1Oz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkB0ZXN0LmNvbSIsImV4cCI6MTYzNzIzNjcyOH0.U1VUvptKoC2_ys2lVrVcHywU5IYuB8gfthkWqndd98Nu-9U0JxWoUPyMjxuaLZBlpsiRHgeXujMvRSoEhSTWmA",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/mobile-app-ws/users?page=1&limit=25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"mobile-app-ws",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "limit",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
