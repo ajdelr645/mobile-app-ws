@@ -13,6 +13,12 @@ import com.appsdeveloperblog.app.ws.io.entity.UserEntity;
 import com.appsdeveloperblog.app.ws.io.repository.UserRepository;
 import io.jsonwebtoken.Jwts;
 
+/**
+ * This class because it extends BasicAuthenticationFilter, it Processes a HTTP request's BASIC
+ * authorization headers, putting the result into the SecurityContextHolder.
+ * For more read about:
+ * https://www.loginradius.com/blog/async/everything-you-want-to-know-about-authorization-headers/
+ */
 public class AuthorizationFilter extends BasicAuthenticationFilter {
 	
 	private final UserRepository userRepository;
@@ -22,6 +28,15 @@ public class AuthorizationFilter extends BasicAuthenticationFilter {
         this.userRepository = userRepository;
      }
 
+    /**
+     * Validates the Authorization Field in the Header of the request
+     * This method is called on every request that needs to be authorized
+     * @param req
+     * @param res
+     * @param chain
+     * @throws IOException
+     * @throws ServletException
+     */
 	@Override
 	protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain)
 			throws IOException, ServletException {
