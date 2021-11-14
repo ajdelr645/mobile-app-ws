@@ -18,12 +18,34 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import com.appsdeveloperblog.app.ws.io.repository.UserRepository;
 import com.appsdeveloperblog.app.ws.service.UserService;
 
+/**
+ * Defined URL requests that need authorization
+ * Defined filters
+ */
 @EnableGlobalMethodSecurity(securedEnabled=true, prePostEnabled=true) //to enable @Secured and @PreAuthorize
 @EnableWebSecurity
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 
+	/**
+	 * This class extends Spring's UserDetailsService class
+	 */
 	private final UserService userDetailsService;
+
+	/**
+	 * This class implements Spring's PasswordEncoder
+	 */
 	private final BCryptPasswordEncoder bCryptPasswordEncoder;
+
+	/**
+	 * 1. Both classes above needs to implements/extend the needed classes to be able to be used in
+	 * void configure(AuthenticationManagerBuilder auth) method
+	 * 2. UserServiceImpl implements loadUserByUsername method of UserDetailsService class (of spring) because UserService extends it. This
+	 *    method is called during login
+	 * 3. BCryptPasswordEncoder implements encode and matches method PasswordEncoder, the class it implements. Matches method
+	 *    will automatically be called upon login
+	 */
+
+
     private final UserRepository userRepository;
 
     public WebSecurity(UserService userDetailsService,
@@ -62,6 +84,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         http.headers().frameOptions().disable();
     }
 
+	/**
+	 * Processes will be done by spring in the back end . All we need to do is tell spring which class we use for userdetails and
+	 * for password encoding.
+	 * @param auth
+	 * @throws Exception
+	 */
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
